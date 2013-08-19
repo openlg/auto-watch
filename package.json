@@ -16,8 +16,8 @@
     "auto monitor",
     "monitor fs tree"
   ],
-  "version": "0.0.1",
-  "homepage": "https://github.com/lrf0808/auto-watch",
+  "version": "0.0.2",
+  "homepage": "https://github.com/openlg/auto-watch",
   "authors": [
     {
       "name": "openlg",
@@ -33,11 +33,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lrf0808/auto-watch"
+    "url": "https://github.com/openlg/auto-watch"
   },
   "author": "lg",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/lrf0808/auto-watch/issues"
+    "url": "https://github.com/openlg/auto-watch/issues"
   }
 }
