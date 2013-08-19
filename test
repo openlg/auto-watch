@@ -1,0 +1,83 @@
+#!/bin/sh
+
+tmpdir='/tmp/testdir'
+
+if test -d $tmpdir ; then
+	echo "directory $tmpdir is exists."
+else
+	mkdir $tmpdir
+fi
+
+exec ./testWatch.js $tmpdir &
+
+pid=$!
+
+sleep 2
+
+echo '============================================开始测试：'
+
+echo "创建文件$tmpdir/1"
+echo 1 > $tmpdir/1
+sleep 3
+
+echo ''
+echo "修改文件:$tmpdir/1"
+echo 2 >> $tmpdir/1
+sleep 3
+
+echo ''
+echo "创建子目录:$tmpdir/dir"
+mkdir $tmpdir/dir
+sleep 3
+
+echo ''
+echo "修改子目录权限:$tmpdir/dir"
+chmod +x $tmpdir/dir
+sleep 3
+
+echo ''
+echo "创建子目录下的文件$tmpdir/dir/3"
+echo 4 > $tmpdir/dir/3
+sleep 3
+
+echo ''
+echo "修改子目录下的文件:$tmpdir/dir/3"
+echo 5 >> $tmpdir/dir/3
+sleep 3
+
+echo ''
+echo "创建多级子目录:$tmpdir/dir/test/test/test"
+mkdir -p $tmpdir/dir/test/test/test
+sleep 5
+
+echo ''
+echo "创建多级子目录下的文件:$tmpdir/dir/test/test/4"
+echo 6 > $tmpdir/dir/test/test/4
+sleep 3
+
+echo ''
+echo "创建多级子目录下的文件:$tmpdir/dir/test/test/5"
+echo 7 > $tmpdir/dir/test/test/5
+sleep 3
+
+echo ''
+echo "删除多级子目录下的文件:$tmpdir/dir/test/test/5"
+rm $tmpdir/dir/test/test/5
+sleep 3
+
+echo ''
+echo "删除子目录:$tmpdir/dir/test/test/test"
+rm -r $tmpdir/dir/test/test/test
+sleep 3
+
+echo ''
+echo "同时删除多级子目录:$tmpdir/dir"
+rm -r $tmpdir/dir
+sleep 5
+
+
+kill -9 $pid
+echo "============================================测试结束。"
+
+echo "删除测试目录$tmpdir"
+rm -r $tmpdir

@@ -1,0 +1,43 @@
+{
+  "name": "auto-watch",
+  "description": "Utilities for auto watching file trees in node.js.",
+  "keywords": [
+    "auto-watch",
+    "watch",
+    "watch tree",
+    "watch fs",
+    "auto watch",
+    "auto watch file system",
+    "watch file system",
+    "auto",
+    "auto watch tree",
+    "monitor",
+    "monitor file system",
+    "auto monitor",
+    "monitor fs tree"
+  ],
+  "version": "0.0.1",
+  "homepage": "https://github.com/lrf0808/auto-watch",
+  "authors": [
+    {
+      "name": "openlg",
+      "email": "lirufei0808@gmail.com"
+    }
+  ],
+  "main": "./watch.js",
+  "dependencies": {
+    "scan-fs": "*"
+  },
+  "scripts": {
+    "test": "./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lrf0808/auto-watch"
+  },
+  "author": "lg",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/lrf0808/auto-watch/issues"
+  }
+}
